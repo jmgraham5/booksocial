@@ -37,4 +37,4 @@ As a social site users will be able to sign up for an account or log into an exi
 • Milestone 3 - Like/Dislike system implemented 
 • Milestone 4 - Ability to follow certain sections of site and exclude others
 
-https://github.com/users/jmgraham5/projects/3/views/1
+https://github.com/users/jmgraham5/projects/4
