@@ -13,11 +13,11 @@
         <h5>Discover, share, and interact with a community of fellow readers.</h5>
       </div>
       <div>
-        {% comment %} {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
         <p>Welcome, <span><a href="{% url 'users:profile' user.username %}">{{user.username}}</a></span></p>
-          <a href="{% url 'posts:new' %}">New Post</a>
+          <a href="{% url 'threads:new' %}">New Post</a>
           <a href="{% url 'logout' %}">Logout</a>
-        {% endif %} {% endcomment %}
+        {% endif %}
       </div>
     </nav>
     

@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Post
-from django.contrib.auth.models import User
+from users.models import CustomUser
 from django.contrib.auth.hashers import make_password
 # Create your views here.
 
@@ -17,7 +17,7 @@ class ListPosts(ListView):
 
 class CreatePost(LoginRequiredMixin, CreateView):
     model = Post
-    template_name = 'newpost.html'
+    template_name = 'newthread.html'
     fields = ['title', 'body']
 
     def form_valid(self, form):
@@ -32,7 +32,7 @@ def HomeRegister(request):
 
     if request.POST['password2'] == request.POST['password']:
 
-        user_model = User(username=request.POST['name'], password=make_password(
+        user_model = CustomUser(username=request.POST['name'], password=make_password(
             request.POST['password']))
         user_model.save()
     else:

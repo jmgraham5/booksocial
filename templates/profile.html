@@ -3,8 +3,8 @@
   {% block content %}
 
   <div>
-    <h1>Profile</h1>
-    <a id='profile-back' href="{% url 'posts:home' %}">Back</a>
+    <h1>{{user.username}}'s Profile</h1>
+    <a id='profile-back' href="{% url 'threads:home' %}">Back</a>
     <p>Username: {{user.username}}</p>
     <p>First Name: {{user.first_name}}</p>
     <p>Last Name: {{user.last_name}}</p>
