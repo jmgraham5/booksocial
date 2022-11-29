@@ -6,7 +6,7 @@
 {% if user.is_authenticated == False%}
   <p>Please <span><a href="{% url 'login' %}">login</a></span> or <span><a href="{% url 'users:signup' %}">signup</a></span>. 
  
- {% comment %} {% else %}
+{% else %}
 
   <div class='post-section'>
     {% for post in object_list %}
@@ -16,14 +16,14 @@
           title: {{post.title}}
         </p>
         <p>
-        {{post.body}}
+        body: {{post.body}}
       </p>
         <p>
         author: {{post.user}}
       </p>
       </div>
 
-    {% endfor %} {% endcomment %}
+    {% endfor %}
      {% endif %}
   </div>
 
