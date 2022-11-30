@@ -1,36 +1,45 @@
-{% load static %}
 
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <head>
     <meta charset="utf-8">
-    <div id="app">
+
     <title>Book Social</title>
   </head>
   <body>
+  {% csrf_token %}
+  <div id="app">
+
     <nav>
       <div>
         <h1 class='primary'>Book Social</h1>
         <h5>Discover, share, and interact with a community of fellow readers.</h5>
-        <button @click='loadBooks()'></button>
       </div>
       <div>
         {% if user.is_authenticated %}
         <p>Welcome, <span><a href="{% url 'users:profile' user.username %}">{{user.username}}</a></span></p>
           <a href="{% url 'threads:new' %}">New Post</a>
           <a href="{% url 'logout' %}">Logout</a>
+          
         {% endif %}
+        
       </div>
     </nav>
     
     {% block content %}
     {% endblock %}
-</div>
-<script src="{% static '/scripts.js' %}"></script>
-            <script>
-                const mountApp = app.mount('#app')
-            </script>
+
+  </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+      <script src="{% static '/app.js' %}"></script>
+
+      <script>
+        const mountApp = app.mount('#app')
+      </script>
+
   </body>
 </html>

@@ -25,6 +25,26 @@ class CreatePost(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    template_name = 'editthread.html'
+    fields = ['title', 'body']
+
+    def test_func(self):
+        thread = self.get_object()
+        return self.request.user == thread.author
+
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = 'deletethread.html'
+    success_url = reverse_lazy('threads:home')
+
+    def test_func(self):
+        thread = self.get_object()
+        return self.request.user == thread.author
+
+
 def HomeRegister(request):
 
     if len(request.POST['password']) < 8:
