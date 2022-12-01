@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+    display: flex;
+}
+
+.like {
+    font-size: .8rem;
+    justify-content: space-between;
+}
+
+.user {
+    font-size: .8rem;
+}
+
+.thread {
+    font-size: 1rem;
+}
+
+#container2 {
+    display: flex
+}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<link rel="stylesheet" href="/static/home.css">
 
 
 {% if user.is_authenticated == False%}
@@ -12,16 +12,18 @@
     {% for post in object_list %}
 
       <div class="post">
-        <p>
+        <p class='main'>
           title: {{post.title}}
         </p>
-        <p>
+        <p class='thread'>
         body: {{post.body}}
       </p>
-        <p>
+      <div id='container2'>
+        <p class='user'>
         author: {{post.user}}
       </p>
-      <p>Likes: [[counter]]</p>
+      <p class='like'>Likes: [[counter]]</p>
+      </div>
         {% if threads.author.username == user.username %}
           <a href="{% url 'threads:edit' threads.pk %}">edit</a>
         {% endif %}
