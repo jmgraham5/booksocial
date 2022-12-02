@@ -1,21 +1,30 @@
-body {
-    background-color: white;
-    display: flex;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
 }
 
+.thread {
+    padding-top: 1rem;
+}
+
+.post {
+    padding-top: 1rem;
+}
 .like {
     font-size: .8rem;
-    justify-content: space-between;
+    padding-left: 1rem;
 }
 
 .user {
     font-size: .8rem;
 }
 
-.thread {
+.body {
     font-size: 1rem;
 }
 
 #container2 {
-    display: flex
+    display: flex;
 }

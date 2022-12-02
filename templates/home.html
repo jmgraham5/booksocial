@@ -8,14 +8,14 @@
 {% endif %}
 
 
-  <div class='post-section'>
+  <div class='thread'>
     {% for post in object_list %}
 
       <div class="post">
         <p class='main'>
           title: {{post.title}}
         </p>
-        <p class='thread'>
+        <p class='body'>
         body: {{post.body}}
       </p>
       <div id='container2'>
@@ -23,10 +23,9 @@
         author: {{post.user}}
       </p>
       <p class='like'>Likes: [[counter]]</p>
+      <a href="{% url 'threads:edit' threads.pk %}">edit</a>
       </div>
-        {% if threads.author.username == user.username %}
-          <a href="{% url 'threads:edit' threads.pk %}">edit</a>
-        {% endif %}
+          
         
       </div>
 
