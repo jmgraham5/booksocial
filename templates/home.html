@@ -22,10 +22,14 @@
         <p class='user'>
         author: {{post.user}}
       </p>
-      <p class='like'>Likes: [[counter]]</p>
-      <a href="{% url 'threads:edit' threads.pk %}">edit</a>
+      
+      <p class='like'>
+      <button type='submit' @click='like()'>like</button>
+      Likes: [[counter]]</p>
       </div>
-          
+        {% if threads.user.username == users.username %}
+          <button onclick="'threads:delete'">Delete
+        {% endif %}
         
       </div>
 

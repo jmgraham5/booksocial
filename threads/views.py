@@ -32,7 +32,7 @@ class EditPost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         thread = self.get_object()
-        return self.request.user == thread.author
+        return self.request.user == thread.user
 
 
 class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -42,7 +42,7 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         thread = self.get_object()
-        return self.request.user == thread.author
+        return self.request.user == thread.user
 
 
 def HomeRegister(request):

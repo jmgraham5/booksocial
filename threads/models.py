@@ -14,6 +14,7 @@ class Post(models.Model):
         CustomUser, related_name='threads', on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     edited = models.DateTimeField(auto_now=True)
+    likes = 0
 
     class Meta:
         ordering = ['-created']
