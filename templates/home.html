@@ -18,17 +18,14 @@
         <p class='body'>
         body: {{post.body}}
       </p>
-      <div id='container2'>
         <p class='user'>
-        author: {{post.user}}
-      </p>
-      
-      <p class='like'>
-      <button type='submit' @click='like()'>like</button>
-      Likes: [[counter]]</p>
-      </div>
+          author: {{post.user}}
+        </p>
         {% if threads.user.username == users.username %}
-          <button onclick="'threads:delete'">Delete
+          <button><a href="{% url 'threads:edit' post.pk %}">Edit Thread
+          </a></button>
+          <button><a href="{% url 'threads:delete' post.pk %}">Delete Thread
+          </a></button>
         {% endif %}
         
       </div>
