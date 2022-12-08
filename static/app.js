@@ -7,13 +7,10 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        like(){
-            
-            this.counter ++;
-        },
-        dislike(){
-            
-            this.counter --;
+        getList() {
+            this.axios.get(api).then((response) => {
+                console.log(response.data)
+            })
         }
     },  
     mounted(){

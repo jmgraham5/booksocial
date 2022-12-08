@@ -22,10 +22,10 @@
           author: {{post.user}}
         </p>
         {% if threads.user.username == users.username %}
-          <button><a href="{% url 'threads:edit' post.pk %}">Edit Thread
-          </a></button>
-          <button><a href="{% url 'threads:delete' post.pk %}">Delete Thread
-          </a></button>
+          <a href="{% url 'threads:edit' post.pk %}">Edit Thread
+          </a>
+          <a href="{% url 'threads:delete' post.pk %}">Delete Thread
+          </a>
         {% endif %}
         
       </div>
