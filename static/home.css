@@ -5,9 +5,9 @@
 }
 
 nav {
+    display: flex;
     text-align: center;
     background-color: white;
-    border: 1px solid red;
 }
 
 body {
@@ -16,9 +16,8 @@ body {
 .thread {
     display: flex;
     padding-top: 1rem;
+    flex-direction: column;
     justify-content: center;
-
-    
 }
 
 .post {
@@ -28,8 +27,9 @@ body {
     padding-top: 1rem;
     text-align: center;
     border: 1px solid grey;
-
+    border-radius: 15px;
 }
+
 .like {
     font-size: .8rem;
     padding-left: 1rem;
