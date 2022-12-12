@@ -4,6 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/home.css">
 
     <title>Book Social</title>
   </head>
@@ -11,19 +12,16 @@
   {% csrf_token %}
   <div id="app">
 
-    <nav>
+    <nav id='navbar'>
       <div>
         <h1 class='primary'>Book Social</h1>
-        <h5>Discover, share, and interact with a community of fellow readers.</h5>
+        <h5 class='intro'>The home for bibliophiles.</h5>
       </div>
-      <div>
+      <div class='userinfo'>
         {% if user.is_authenticated %}
-        <p>Welcome, <span><a href="{% url 'users:profile' user.username %}">{{user.username}}</a></span></p>
-          <a href="{% url 'threads:new' %}">New Thread</a>
-          <a href="{% url 'logout' %}">Logout</a>
-          
+        <p class='welcome'>Welcome, <span><a href="{% url 'users:profile' user.username %}">{{user.username}}</a></span></p>
+        <a class='logoutLink' href="{% url 'logout' %}">Logout</a>
         {% endif %}
-        
       </div>
     </nav>
     

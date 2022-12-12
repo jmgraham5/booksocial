@@ -3,21 +3,26 @@ const app = Vue.createApp({
     data(){
         return {
             csrfToken: '',
-            counter: 0
-        },
-        axios({
-            method: 'GET',
-            url: 'https://www.googleapis.com/books/v1',
-            headers: {
-                key : "AIzaSyD6Kae-WT53nONZryAncj-oJEUf5ZWy5ms"
-            }
-        }).then((response) => {
-            console.log(response.data)
-        })
+            counter: 0,
+            search: '',
+            list: []
+        }
+        
     },
     methods: {
-        
-    },  
+
+    },
+    beforeMount(){
+        axios({
+            method: 'GET',
+            url: "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=A39vwwnDvytjcGqAVUsfwQZ9x9nbLKDZ",
+            headers: "Accept: application/json"
+        }).then((response) => {
+            let current = response.data.results
+            this.list = current['books']
+            console.log(this.list)
+        })
+    },
     mounted(){
        this.csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value
     }
