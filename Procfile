@@ -1,2 +1,2 @@
-web: gunicorn booksocial.wsgi
+web: gunicorn socialapp.wsgi
 release: python manage.py migrate
