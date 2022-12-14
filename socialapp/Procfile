@@ -1,2 +1,2 @@
 web: cd booksocial && gunicorn social.wsgi
-release: python manage.py migrate
+release: cd booksocial && python manage.py migrate
