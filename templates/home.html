@@ -10,7 +10,7 @@
 
   <div class='new'>
     {% if user.is_authenticated%}
-    <a href="{% url 'threads:new' %}">New Thread</a>
+    <a href="{% url 'threads:new' %}">New Post</a>
     {% endif %}
   </div>
   <main class='frontEnd'>
@@ -25,15 +25,14 @@
           {{post.body}}
         </p>
           <p class='user'>
-            Posted By <span class='use'>{{post.user}}</span>
+            Posted By <span class='use'>{{post.user}}</span> on {{post.created}}
           </p>
           {% if user.id == post.user.id %}
             <a class='edit' href="{% url 'threads:edit' post.pk %}">Edit Thread
             </a>
             <a class='delete' href="{% url 'threads:delete' post.pk %}">Delete Thread
             </a>
-          {% endif %}
-          
+          {% endif %}       
         </div>
 
       {% endfor %}

@@ -4,12 +4,143 @@
     box-sizing: border-box;
     font-family: lato;
 }
+@media only screen and (max-width: 767px) {
+    
 
+#navbar {
+    width: 100vw;
+    height: 6rem;
+    justify-content: space-between;
+}
+
+.primary {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+.intro {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+.userinfo {
+    display: flex;
+    padding-right: 2rem;
+    flex-direction: column;
+}
+
+.logoutLink {
+    padding-top: 5px;
+}
+
+
+.welcome {
+    padding-top: 1rem;
+    text-align: right;
+}
+
+.thread {
+    padding-top: 1rem;
+    flex-direction: column-reverse;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.post {
+    background-color: whitesmoke;
+    width: auto;
+    margin-top: 1rem;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 15px;
+}
+
+.user {
+    font-size: .8rem;
+    text-align: center;
+}
+
+.body {
+    padding-top: 0.6rem;
+    font-size: 1rem;
+}
+
+.main {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.use {
+    font-weight: bold;
+}
+
+.edit {
+    font-size: small;
+    padding-right: 1rem;
+}
+
+
+.delete {
+    font-size: small;
+}
+
+.best {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link{
+    color:blue;
+  }
+  a:visited{
+    color:blue;
+  }
+  a:active{
+    color: blue;
+  }
+
+.frontEnd {
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.bestsellers {
+    padding-top: 1.5rem;
+    width: auto;
+}
+
+.booklist {
+    padding-top: 1rem;
+}
+
+.bookTitle {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.bookAuthor {
+    font-style: italic;
+}
+
+}
+@media only screen and (min-width: 768px) {
 #navbar {
     display: flex;
     width: 100vw;
     height: 6rem;
     justify-content: space-between;
+}
+.topbar {
+    height: 5rem;
+    background-color: grey;
+}
+
+.bottombar {
+    height: 2px;
+    background-color: grey;
 }
 
 .primary {
@@ -48,11 +179,11 @@
 
 .post {
     background-color: whitesmoke;
-    width: 45vw;
+    width: 75vw;
     margin-top: 1rem;
     text-align: center;
     border: 1px solid grey;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .user {
@@ -62,7 +193,7 @@
 
 .body {
     padding-top: 0.6rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .main {
@@ -81,6 +212,7 @@
 
 .delete {
     font-size: small;
+    padding-left: 1rem
 }
 
 .best {
@@ -105,7 +237,8 @@ a:link{
 
 .bestsellers {
     padding-top: 1.5rem;
-    width: 50vw;
+    width: 20vw;
+    padding-right: 2rem;
 }
 
 .booklist {
@@ -119,4 +252,5 @@ a:link{
 
 .bookAuthor {
     font-style: italic;
+}
 }

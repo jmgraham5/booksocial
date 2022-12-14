@@ -9,7 +9,7 @@ from users.models import CustomUser
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    body = models.TextField(max_length=200)
+    body = models.TextField(max_length=500)
     user = models.ForeignKey(
         CustomUser, related_name='threads', on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)

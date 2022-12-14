@@ -1,9 +1,9 @@
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.http import HttpResponseRedirect
 from .models import Post
 from users.models import CustomUser
 from django.contrib.auth.hashers import make_password
